@@ -1,0 +1,19 @@
+<p-carousel 
+  [value]="images"
+  [numVisible]="1"
+  [numScroll]="1"
+  [circular]="true"
+  [autoplayInterval]="3000"
+  [responsiveOptions]="responsiveOptions"
+  styleClass="w-full">
+
+  <ng-template let-image pTemplate="item">
+    <div class="w-full h-[550px] mt-4">
+      <img 
+        [src]="image.url" 
+        alt="Food Image" 
+        class="w-full h-[550px] object-cover rounded-lg border"
+      />
+    </div>
+  </ng-template>
+</p-carousel>

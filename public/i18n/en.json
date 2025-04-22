@@ -1,0 +1,50 @@
+{
+    "brandName": "Food Recipe",
+    "home": "Home",
+    "aboutUs": "About Us",
+    "recipes": "Recipes",
+    "addRecipes": "Add Recipes",
+    "language": "Languages",
+    "english": "English",
+    "urdu": "Urdu",
+    "whoWeAre":"Who We Are",
+    "whatWeOffer":"What We Offer",
+    "ourMission":"Our Mission",
+    "whyChooseUs":"Why Choose Us",
+    "whoWeAreText":"Welcome to Food Recipe – your go-to hub for delicious, easy-to-follow recipes from around the world. Whether you're a home cook or a beginner in the kitchen, we’re here to inspire your culinary journey.",
+    "whatWeOfferText":"Hundreds of recipes across different cuisines.",
+    "whatWeOfferText1":"Step-by-step instructions and cooking tips.",
+    "whatWeOfferText2":"Add your own recipes.",
+    "whatWeOfferText3":"Available in English & Urdu for better accessibility.",
+    "ourMissionText":"Our mission is to bring people together through food. We believe cooking should be simple, fun, and shared with loved ones.",
+    "whyChooseUsText":" User-friendly platform",
+    "whyChooseUsText1":" Multilingual support",
+    "whyChooseUsText2":" Community recipe sharing",
+    "whyChooseUsText3":" Completely free to use",
+ "footer": {
+  "aboutTitle": "About Food Recipe",
+  "aboutText": "Food Recipe is your go-to source for easy and delicious recipes from around the world. Discover, cook, and share!",
+  "contactTitle": "Contact Us",
+  "email": "info@foodrecipe.com",
+  "address": "123 Culinary Street, Kitchen City, World",
+  "followUs": "Follow Us",
+  "rights": "All rights reserved."
+},
+"addRecipe": {
+  "addNewRecipe": "Add New Recipe",
+  "selectFoodType": "Select Food Type",
+  "title": "Title",
+  "description": "Description",
+  "ingredients": "Ingredients",
+  "addRecipeBtn": "Add Recipe",
+  "chooseImage": "Choose Image" 
+},
+"foodOptions": {
+  "Breakfast": "Breakfast",
+  "Lunch": "Lunch",
+  "Dinner": "Dinner",
+  "Snacks": "Snacks",
+  "Desserts": "Desserts"
+}
+  }
+  

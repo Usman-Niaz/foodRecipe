@@ -1,0 +1,29 @@
+@if (loading) {
+    <div class="text-center text-gray-900">Loading recipe details...</div>
+  } @else if (error) {
+    <div class="text-center text-red-500">{{ error }}</div>
+  } @else if (recipe) {
+    <div class="p-6 text-gray-900">
+      <img
+        [src]="recipe.image"
+        alt="{{ recipe.title }}"
+        class="w-auto h-auto object-cover my-4"
+      />
+      
+      <h2 class="text-3xl font-bold">{{ recipe.title }}</h2>
+      <div class="mt-4">
+        <h3 class="font-semibold">Category:</h3>
+        <p>{{ recipe.category }}</p>
+      </div>
+      <h3 class="font-semibold ">Description:</h3>
+      <p class="text-lg text-justify">{{ recipe.description }}</p>
+  
+     
+  
+      <div class="mt-4">
+        <h3 class="font-semibold">Ingredients:</h3>
+        <p class="text-lg text-justify">{{ recipe.ingredients }}</p>
+      </div>
+    </div>
+  }
+  

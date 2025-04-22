@@ -1,0 +1,134 @@
+<nav class="bg-gray-800 text-white p-4">
+  <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo & Title -->
+      <div class="flex items-center">
+        <img src="logo.png" class="h-10 w-10" alt="Logo" />
+        <span class="ml-3 text-xl font-semibold">
+          {{ "brandName" | translate }}
+        </span>
+      </div>
+
+      <!-- Desktop Links & Language Dropdown -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a [routerLink]="['/home']" class="hover:text-gray-300">{{ "home" | translate }}</a>
+        <a [routerLink]="['/recipe']" class="hover:text-gray-300">{{ "recipes" | translate }}</a>
+        <a [routerLink]="['/addRecipe']" class="hover:text-gray-300">{{
+          "addRecipes" | translate
+        }}</a>
+
+        <!-- Language Dropdown for Desktop -->
+        <!-- Language Dropdown (Desktop) -->
+        <div class="relative">
+          <button
+            (click)="toggleDropdown()"
+            class="flex items-center gap-1 hover:text-gray-300 focus:outline-none"
+          >
+            <fa-icon [icon]="faGlobe" class="text-xl"></fa-icon>
+            <span>{{ "language" | translate }}</span>
+            <svg class="w-4 h-4 ml-1" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M5.25 7.25L10 12l4.75-4.75" />
+            </svg>
+          </button>
+
+          <div
+            *ngIf="dropdownOpen"
+            class="absolute right-0 mt-2 w-36 bg-white text-gray-800 shadow-md rounded-md z-50"
+          >
+            <button
+              (click)="changeLanguage('en')"
+              class="block w-full px-4 py-2 hover:bg-gray-100 text-left"
+            >
+              {{ "english" | translate }}
+            </button>
+            <button
+              (click)="changeLanguage('ur')"
+              class="block w-full px-4 py-2 hover:bg-gray-100 text-left"
+            >
+              اردو
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="sm:hidden">
+        <button
+          (click)="toggleMenu()"
+          class="text-gray-300 hover:text-white focus:outline-none"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Links -->
+  <div class="sm:hidden" [ngClass]="{ hidden: !isMobileMenuOpen }">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a
+      [routerLink]="['/home']" 
+        (click)="isMobileMenuOpen = false"
+        class="block px-3 py-2 rounded-md hover:bg-gray-700"
+      >
+        {{ "home" | translate }}
+      </a>
+    
+      <a
+      [routerLink]="['/recipe']" 
+        (click)="isMobileMenuOpen = false"
+        class="block px-3 py-2 rounded-md hover:bg-gray-700"
+      >
+        {{ "recipes" | translate }}
+      </a>
+      <a
+      [routerLink]="['/addRecipe']" 
+        (click)="isMobileMenuOpen = false"
+        class="block px-3 py-2 rounded-md hover:bg-gray-700"
+      >
+        {{ "addRecipes" | translate }}
+      </a>
+
+      <!-- Mobile Language Dropdown -->
+      <div class="mt-2 border-t border-gray-700 pt-2">
+        <button
+          (click)="toggleMobileDropdown()"
+          class="flex items-center w-full px-3 py-2 rounded-md hover:bg-gray-700 text-left"
+        >
+          <fa-icon [icon]="faGlobe" class="mr-2"></fa-icon>
+          {{ "language" | translate }}
+          <svg class="w-4 h-4 ml-auto" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M5.25 7.25L10 12l4.75-4.75" />
+          </svg>
+        </button>
+
+        <div *ngIf="mobileDropdownOpen" class="mt-1 ml-6 space-y-1">
+          <button
+            (click)="changeLanguage('en')"
+            class="block w-full text-left px-3 py-2 hover:bg-gray-700"
+          >
+            {{ "english" | translate }}
+          </button>
+          <button
+            (click)="changeLanguage('ur')"
+            class="block w-full text-left px-3 py-2 hover:bg-gray-700"
+          >
+            اردو
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

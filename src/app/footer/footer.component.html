@@ -1,0 +1,33 @@
+<footer class="bg-gray-900 text-gray-300 py-10">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+      
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">{{ 'footer.aboutTitle' | translate }}</h3>
+        <p class="text-justify">{{ 'footer.aboutText' | translate }}</p>
+      </div>
+  
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">{{ 'footer.contactTitle' | translate }}</h3>
+        <p class="mb-2"><fa-icon [icon]="faEnvelope" class="mr-2 text-blue-400"></fa-icon>{{ 'footer.email' | translate }}</p>
+        <p><fa-icon [icon]="faMapMarkerAlt" class="mr-2 text-red-400"></fa-icon>{{ 'footer.address' | translate }}</p>
+      </div>
+  
+      <!-- Social Media -->
+      <div>
+        <h3 class="text-lg font-bold mb-4">{{ 'footer.followUs' | translate }}</h3>
+        <div class="flex space-x-4">
+          <a href="https://facebook.com" target="_blank"><fa-icon [icon]="faFacebook" class="text-blue-600 hover:text-blue-400 text-xl"></fa-icon></a>
+          <a href="https://twitter.com" target="_blank"><fa-icon [icon]="faTwitter" class="text-sky-500 hover:text-sky-300 text-xl"></fa-icon></a>
+          <a href="https://instagram.com" target="_blank"><fa-icon [icon]="faInstagram" class="text-pink-500 hover:text-pink-300 text-xl"></fa-icon></a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Copyright -->
+    <div class="border-t border-gray-700 mt-8 pt-4 text-center text-xs text-gray-500">
+      © {{ currentYear }} Food Recipe. {{ 'footer.rights' | translate }}
+    </div>
+  </footer>
+  
