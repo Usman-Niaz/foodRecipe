@@ -8,15 +8,15 @@
     </h1>
 
     <form [formGroup]="recipeForm" (ngSubmit)="submitRecipeForm()">
-      <!-- Dropdown with background color change -->
+      <!-- Dropdown -->
       <p-dropdown
         formControlName="selectedCategory"
         name="selectedCategory"
         [options]="getTranslatedFoodOptions()"
         optionLabel="name"
         [placeholder]="'addRecipe.selectFoodType' | translate"
-        class="border !bg-gray-500 w-full !mb-4"
-        panelStyleClass="!bg-gray-500"
+        class="border !bg-gray-500 w-full !mb-4  text-white text-lg"
+        panelStyleClass="!bg-gray-500 text-white text-lg"
       ></p-dropdown>
       @if (recipeForm.get('selectedCategory')?.touched &&
       recipeForm.get('selectedCategory')?.invalid) {
@@ -25,9 +25,9 @@
         </small>
       }
 
-      <!-- Title input field -->
+      <!-- Title -->
       <p-floatlabel variant="on">
-        <label for="on_label4" class="!bg-gray-500">
+        <label for="on_label4" class="!bg-gray-500  text-white text-lg">
           {{ "addRecipe.title" | translate }}
         </label>
         <input
@@ -35,14 +35,14 @@
           name="title"
           pInputText
           autocomplete="off"
-          class="!bg-gray-500 w-full !mb-4"
+          class="!bg-gray-500 w-full !mb-4  text-white text-lg"
         />
       </p-floatlabel>
       @if (recipeForm.get('title')?.touched && recipeForm.get('title')?.invalid) {
         <small class="text-red-600 block mb-2">Title is required</small>
       }
 
-      <!-- Description textarea field -->
+      <!-- Description -->
       <p-floatlabel variant="on">
         <textarea
           pTextarea
@@ -51,9 +51,9 @@
           rows="5"
           cols="30"
           style="resize: none"
-          class="!bg-gray-500 w-full !mb-4"
+          class="!bg-gray-500 w-full !mb-4 text-lg text-white"
         ></textarea>
-        <label for="on_label" class="!bg-gray-500">
+        <label for="on_label" class="!bg-gray-500 text-lg text-white">
           {{ "addRecipe.description" | translate }}
         </label>
       </p-floatlabel>
@@ -62,7 +62,7 @@
         <small class="text-red-600 block mb-2">Description is required</small>
       }
 
-      <!-- Ingredients field -->
+      <!-- Ingredients -->
       <p-floatlabel variant="on">
         <textarea
           pTextarea
@@ -71,9 +71,9 @@
           rows="5"
           cols="30"
           style="resize: none"
-          class="!bg-gray-500 w-full !mb-4"
+          class="!bg-gray-500 w-full !mb-4 text-base text-white"
         ></textarea>
-        <label for="on_label" class="!bg-gray-500">
+        <label for="on_label" class="!bg-gray-500 text-base text-white">
           {{ "addRecipe.ingredients" | translate }}
         </label>
       </p-floatlabel>
@@ -82,7 +82,7 @@
         <small class="text-red-600 block mb-2">Ingredients are required</small>
       }
 
-      <!-- Recipe field -->
+      <!-- Recipe -->
       <p-floatlabel variant="on">
         <textarea
           pTextarea
@@ -91,9 +91,9 @@
           rows="5"
           cols="30"
           style="resize: none"
-          class="!bg-gray-500 w-full !mb-4"
+          class="!bg-gray-500 w-full !mb-4 text-lg text-white"
         ></textarea>
-        <label for="on_label" class="!bg-gray-500">
+        <label for="on_label" class="!bg-gray-500 text-lg text-white">
           {{ "addRecipe.recipe" | translate }}
         </label>
       </p-floatlabel>
@@ -102,7 +102,7 @@
         <small class="text-red-600 block mb-2">Recipe is required</small>
       }
 
-      <!-- Image upload -->
+      <!-- Image Upload -->
       <div class="flex flex-row items-center justify-between gap-4">
         <p-fileupload
           name="image"
@@ -114,12 +114,10 @@
           (onSelect)="handleImageSelect($event)"
         ></p-fileupload>
 
-        <!-- Show error manually -->
         @if (imageError) {
           <small class="text-red-600 block mb-2">Image is required</small>
         }
 
-        <!-- Image preview -->
         @if (selectedImage) {
           <div class="ml-auto">
             <img
