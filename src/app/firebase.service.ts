@@ -31,13 +31,14 @@ export class FirebaseService {
     try {
       // Adding the recipe to Firestore
       const docRef = await addDoc(collection(this.db, 'recipes'), {
-        
         title: recipe.title,
         description: recipe.description,
         category: recipe.category,
         ingredients: recipe.ingredients,
+        recpe: recipe.recpe, // 👈 Add this line
         image: recipe.image
       });
+      
   
       // Get the document id directly from docRef.id
       const recipeId = docRef.id;
@@ -76,7 +77,7 @@ export class FirebaseService {
           category: data['category'],
           ingredients: data['ingredients'],
           image: data['image'],
-          recpe: data['ingredients'],
+          recpe: data['recpe'], // ✅ fixed field name
         });
       });
   
@@ -115,7 +116,7 @@ async searchRecipesByTitle(title: string) {
         category: data['category'],
         ingredients: data['ingredients'],
         image: data['image'],
-        recpe: data['ingredients'],
+        recpe: data['recpe'], // ✅ fixed field name
       });
     });
 
@@ -141,7 +142,7 @@ async getRecipeById(id: string): Promise<Recipe | null> {
         category: data['category'],
         ingredients: data['ingredients'],
         image: data['image'],
-        recpe: data['ingredients'],
+        recpe: data['recpe'], // ✅ fixed field name
       };
     } else {
       return null; // Recipe not found
