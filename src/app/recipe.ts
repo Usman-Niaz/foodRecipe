@@ -5,4 +5,5 @@ export interface Recipe {
   category: string;
   ingredients: string;
   image: string;
+  recpe: string;
 }

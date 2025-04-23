@@ -67,6 +67,7 @@ export class AddRecipeComponent {
       title: ['', [Validators.required, Validators.minLength(5)]],
       description: ['', [Validators.required, Validators.minLength(10)]],
       ingredients: ['', [Validators.required, Validators.minLength(10)]],
+      recpe: ['', [Validators.required, Validators.minLength(10)]],
       image: [null], // Validators.required manually handle hoga
     });
   }
@@ -112,6 +113,7 @@ export class AddRecipeComponent {
         description: formValue.description,
         category: formValue.selectedCategory.name,
         ingredients: formValue.ingredients,
+        recpe: formValue.recpe,
         image: typeof this.selectedImage === 'string' ? this.selectedImage : ''
       };
   

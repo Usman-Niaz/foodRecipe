@@ -35,8 +35,9 @@
   "title": "عنوان",
   "description": "تفصیل",
   "ingredients": "اجزاء",
+  "recipe": "ترکیب", 
   "addRecipeBtn": "ترکیب شامل کریں",
-  "chooseImage": "تصویر منتخب کریں" 
+  "chooseImage": "تصویر منتخب کریں"
 },
 "foodOptions": {
   "Breakfast": "ناشتہ",

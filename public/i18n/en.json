@@ -35,6 +35,7 @@
   "selectFoodType": "Select Food Type",
   "title": "Title",
   "description": "Description",
+  "recipe": "Recipe", 
   "ingredients": "Ingredients",
   "addRecipeBtn": "Add Recipe",
   "chooseImage": "Choose Image" 

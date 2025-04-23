@@ -20,15 +20,15 @@
       ></p-dropdown>
       @if (recipeForm.get('selectedCategory')?.touched &&
       recipeForm.get('selectedCategory')?.invalid) {
-      <small class="text-red-600 block mb-2">
-        {{ "addRecipe.selectFoodType" | translate }} is required
-      </small>
+        <small class="text-red-600 block mb-2">
+          {{ "addRecipe.selectFoodType" | translate }} is required
+        </small>
       }
 
       <!-- Title input field -->
       <p-floatlabel variant="on">
-        <label for="on_label4" class="!bg-gray-500"
-          >{{ "addRecipe.title" | translate }}
+        <label for="on_label4" class="!bg-gray-500">
+          {{ "addRecipe.title" | translate }}
         </label>
         <input
           formControlName="title"
@@ -38,10 +38,10 @@
           class="!bg-gray-500 w-full !mb-4"
         />
       </p-floatlabel>
-      @if (recipeForm.get('title')?.touched && recipeForm.get('title')?.invalid)
-      {
-      <small class="text-red-600 block mb-2">Title is required</small>
+      @if (recipeForm.get('title')?.touched && recipeForm.get('title')?.invalid) {
+        <small class="text-red-600 block mb-2">Title is required</small>
       }
+
       <!-- Description textarea field -->
       <p-floatlabel variant="on">
         <textarea
@@ -53,15 +53,16 @@
           style="resize: none"
           class="!bg-gray-500 w-full !mb-4"
         ></textarea>
-        <label for="on_label" class="!bg-gray-500">{{
-          "addRecipe.description" | translate
-        }}</label>
-
-        @if (recipeForm.get('description')?.touched &&
-        recipeForm.get('description')?.invalid) {
-        <small class="text-red-600 block mb-2">Description is required</small>
-        }
+        <label for="on_label" class="!bg-gray-500">
+          {{ "addRecipe.description" | translate }}
+        </label>
       </p-floatlabel>
+      @if (recipeForm.get('description')?.touched &&
+      recipeForm.get('description')?.invalid) {
+        <small class="text-red-600 block mb-2">Description is required</small>
+      }
+
+      <!-- Ingredients field -->
       <p-floatlabel variant="on">
         <textarea
           pTextarea
@@ -72,14 +73,36 @@
           style="resize: none"
           class="!bg-gray-500 w-full !mb-4"
         ></textarea>
-        <label for="on_label" class="!bg-gray-500">{{
-          "addRecipe.ingredients" | translate
-        }}</label>
+        <label for="on_label" class="!bg-gray-500">
+          {{ "addRecipe.ingredients" | translate }}
+        </label>
       </p-floatlabel>
       @if (recipeForm.get('ingredients')?.touched &&
       recipeForm.get('ingredients')?.invalid) {
-      <small class="text-red-600 block mb-2">Ingredients are required</small>
+        <small class="text-red-600 block mb-2">Ingredients are required</small>
       }
+
+      <!-- Recipe field -->
+      <p-floatlabel variant="on">
+        <textarea
+          pTextarea
+          formControlName="recpe"
+          name="recpe"
+          rows="5"
+          cols="30"
+          style="resize: none"
+          class="!bg-gray-500 w-full !mb-4"
+        ></textarea>
+        <label for="on_label" class="!bg-gray-500">
+          {{ "addRecipe.recipe" | translate }}
+        </label>
+      </p-floatlabel>
+      @if (recipeForm.get('recpe')?.touched &&
+      recipeForm.get('recpe')?.invalid) {
+        <small class="text-red-600 block mb-2">Recipe is required</small>
+      }
+
+      <!-- Image upload -->
       <div class="flex flex-row items-center justify-between gap-4">
         <p-fileupload
           name="image"
@@ -93,24 +116,25 @@
 
         <!-- Show error manually -->
         @if (imageError) {
-        <small class="text-red-600 block mb-2">Image is required</small>
+          <small class="text-red-600 block mb-2">Image is required</small>
         }
 
         <!-- Image preview -->
         @if (selectedImage) {
-        <div class="ml-auto">
-          <img
-            [src]="selectedImage"
-            alt="Selected"
-            class="w-40 h-40 object-cover rounded border"
-          />
-        </div>
-
+          <div class="ml-auto">
+            <img
+              [src]="selectedImage"
+              alt="Selected"
+              class="w-40 h-40 object-cover rounded border"
+            />
+          </div>
         }
       </div>
+
+      <!-- Submit Button -->
       <div class="flex justify-center mt-6">
         <button
-        [disabled]="submitting"
+          [disabled]="submitting"
           type="submit"
           class="bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded shadow"
         >

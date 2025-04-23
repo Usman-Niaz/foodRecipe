@@ -75,7 +75,8 @@ export class FirebaseService {
           description: data['description'],
           category: data['category'],
           ingredients: data['ingredients'],
-          image: data['image']
+          image: data['image'],
+          recpe: data['ingredients'],
         });
       });
   
@@ -113,7 +114,8 @@ async searchRecipesByTitle(title: string) {
         description: data['description'],
         category: data['category'],
         ingredients: data['ingredients'],
-        image: data['image']
+        image: data['image'],
+        recpe: data['ingredients'],
       });
     });
 
@@ -138,7 +140,8 @@ async getRecipeById(id: string): Promise<Recipe | null> {
         description: data['description'],
         category: data['category'],
         ingredients: data['ingredients'],
-        image: data['image']
+        image: data['image'],
+        recpe: data['ingredients'],
       };
     } else {
       return null; // Recipe not found
